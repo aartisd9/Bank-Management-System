@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+
+public class Bank{
+    private ArrayList<Account> accounts = new ArrayList<>();
+
+    public void createAccount(String name, int accNo, double balance){
+        accounts.add(new Account(name, accNo, balance));
+        System.out.println("Account Created Sucessfully!");
+    }
+
+    public Account findAccount(int accNo){
+        for (Account acc : accounts){
+            if (acc.getAccountNumber()== accNo){
+                return acc;
+            }
+        }
+        return null;
+    }
+    public void displayAllAccounts() {
+        for (Account acc: accounts){
+            System.out.println("--------------");
+        }
+    }
+}
